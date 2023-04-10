@@ -141,6 +141,7 @@ static void generate_proposals(const ncnn::Mat &anchors, int stride, const ncnn:
                                const ncnn::Mat &feat_blob, float prob_threshold,
                                std::vector <Object> &objects) {
     const int num_grid = feat_blob.h;
+    float unsig_pro = 0;
     if (prob_threshold > 0.6)
         float unsig_pro = unsigmoid(prob_threshold);
 
